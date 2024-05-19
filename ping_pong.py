@@ -47,23 +47,23 @@ class Label(Area):
 
     def draw(self, shift_x=0, shift_y=0):
         self.fill()
-        mw.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y))
+        mw.blit((self.rect.x + shift_x, self.rect.y + shift_y))
 
 
 # класс для объектов-картинок
 class Picture(Area):
-    def __init__(self, filename, x=0, y=0, width=10, height=10):
+    def __init__(self, x=0, y=0, width=10, height=10):
         Area.__init__(self, x=x, y=y, width=width, height=height, color=None)
-        self.image = pygame.image.load(filename)
+
 
     def draw(self):
-        mw.blit(self.image, (self.rect.x, self.rect.y))
+        mw.blit((self.rect.x, self.rect.y))
 
 
 # создание мяча и платформы
-ball = Picture('ball.png', 25, 200, 50, 50)
-platform1 = Picture('platform.png', racket1_x, racket1_y, 70, 25)
-platform2 = Picture('platform.png', racket2_x, racket2_y, 70, 25)
+ball = Picture(25, 200, 50, 50)
+platform1 = Picture(racket1_x, racket1_y, 70, 25)
+platform2 = Picture(racket2_x, racket2_y, 70, 25)
 
 speed_x = 3
 speed_y = 3
